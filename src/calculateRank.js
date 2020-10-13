@@ -72,7 +72,7 @@ function calculateRank({
     normalizedScore >= RANK_S_VALUE &&
     normalizedScore < RANK_DOUBLE_A_VALUE
   ) {
-    level = "S";
+    level = "normalizedScore";
   }
   if (
     normalizedScore >= RANK_DOUBLE_A_VALUE &&
