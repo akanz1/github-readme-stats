@@ -41,11 +41,11 @@ function calculateRank({
     FOLLOWERS_OFFSET +
     REPO_OFFSET;
 
-  const RANK_S_VALUE = 10;
-  const RANK_DOUBLE_A_VALUE = 50;
-  const RANK_A2_VALUE = 70;
-  const RANK_A3_VALUE = 85;
-  const RANK_B_VALUE = 100;
+  const RANK_S_VALUE = 1;
+  const RANK_DOUBLE_A_VALUE = 25+50;
+  const RANK_A2_VALUE = 45+50;
+  const RANK_A3_VALUE = 60+50;
+  const RANK_B_VALUE = 100+50;
 
   const TOTAL_VALUES =
     RANK_S_VALUE + RANK_A2_VALUE + RANK_A3_VALUE + RANK_B_VALUE;
@@ -59,32 +59,32 @@ function calculateRank({
     prs * PRS_OFFSET +
     followers * FOLLOWERS_OFFSET + 
     totalRepos * REPO_OFFSET 
-  ) * 2 / 100;
+  ) / 100;
 
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
   let level = "";
 
   if (normalizedScore < RANK_S_VALUE) {
-    level = "normalizedScore";
+    level = "S+";
   }
   if (
     normalizedScore >= RANK_S_VALUE &&
     normalizedScore < RANK_DOUBLE_A_VALUE
   ) {
-    level = "normalizedScore";
+    level = "S";
   }
   if (
     normalizedScore >= RANK_DOUBLE_A_VALUE &&
     normalizedScore < RANK_A2_VALUE
   ) {
-    level = "normalizedScore";
+    level = "A++";
   }
   if (normalizedScore >= RANK_A2_VALUE && normalizedScore < RANK_A3_VALUE) {
-    level = "normalizedScore";
+    level = "A+";
   }
   if (normalizedScore >= RANK_A3_VALUE && normalizedScore < RANK_B_VALUE) {
-    level = "normalizedScore";
+    level = "B+";
   }
 
   return { level, score: normalizedScore };
