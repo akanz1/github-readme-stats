@@ -42,10 +42,10 @@ function calculateRank({
     REPO_OFFSET;
 
   const RANK_S_VALUE = 1;
-  const RANK_DOUBLE_A_VALUE = 25+50;
-  const RANK_A2_VALUE = 45+50;
-  const RANK_A3_VALUE = 60+50;
-  const RANK_B_VALUE = 100+50;
+  const RANK_DOUBLE_A_VALUE = 30;
+  const RANK_A2_VALUE = 60;
+  const RANK_A3_VALUE = 80;
+  const RANK_B_VALUE = 100;
 
   const TOTAL_VALUES =
     RANK_S_VALUE + RANK_A2_VALUE + RANK_A3_VALUE + RANK_B_VALUE;
@@ -59,7 +59,7 @@ function calculateRank({
     prs * PRS_OFFSET +
     followers * FOLLOWERS_OFFSET + 
     totalRepos * REPO_OFFSET 
-  ) / 100;
+  )*2 / 100;
 
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
@@ -72,7 +72,7 @@ function calculateRank({
     normalizedScore >= RANK_S_VALUE &&
     normalizedScore < RANK_DOUBLE_A_VALUE
   ) {
-    level = normalizedScore;
+    level = "S";
   }
   if (
     normalizedScore >= RANK_DOUBLE_A_VALUE &&
