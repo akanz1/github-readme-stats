@@ -43,8 +43,8 @@ function calculateRank({
 
   const RANK_S_VALUE = 1;
   const RANK_DOUBLE_A_VALUE = 25;
-  const RANK_A2_VALUE = 45;
-  const RANK_A3_VALUE = 60;
+  const RANK_A2_VALUE = 75;
+  const RANK_A3_VALUE = 80;
   const RANK_B_VALUE = 100;
 
   const TOTAL_VALUES =
