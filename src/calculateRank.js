@@ -59,7 +59,7 @@ function calculateRank({
     prs * PRS_OFFSET +
     followers * FOLLOWERS_OFFSET + 
     totalRepos * REPO_OFFSET 
-  )*3 / 100;
+  )*5 / 100;
 
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
