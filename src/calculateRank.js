@@ -41,10 +41,10 @@ function calculateRank({
     FOLLOWERS_OFFSET +
     REPO_OFFSET;
 
-  const RANK_S_VALUE = 1;
-  const RANK_DOUBLE_A_VALUE = 25;
-  const RANK_A2_VALUE = 50;
-  const RANK_A3_VALUE = 75;
+  const RANK_S_VALUE = 10;
+  const RANK_DOUBLE_A_VALUE = 50;
+  const RANK_A2_VALUE = 70;
+  const RANK_A3_VALUE = 85;
   const RANK_B_VALUE = 100;
 
   const TOTAL_VALUES =
