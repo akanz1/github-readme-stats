@@ -43,8 +43,8 @@ function calculateRank({
 
   const RANK_S_VALUE = 1;
   const RANK_DOUBLE_A_VALUE = 25;
-  const RANK_A2_VALUE = 75;
-  const RANK_A3_VALUE = 80;
+  const RANK_A2_VALUE = 50;
+  const RANK_A3_VALUE = 75;
   const RANK_B_VALUE = 100;
 
   const TOTAL_VALUES =
@@ -78,10 +78,10 @@ function calculateRank({
     normalizedScore >= RANK_DOUBLE_A_VALUE &&
     normalizedScore < RANK_A2_VALUE
   ) {
-    level = "A++";
+    level = "A++++++";
   }
   if (normalizedScore >= RANK_A2_VALUE && normalizedScore < RANK_A3_VALUE) {
-    level = "A+";
+    level = "A+++++";
   }
   if (normalizedScore >= RANK_A3_VALUE && normalizedScore < RANK_B_VALUE) {
     level = "B+";
